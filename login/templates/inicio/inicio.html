@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% load static %}
+{% block titulo %}Inicio{% endblock %}
+{% block contenido %}
+
+<div calss="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Bienvenidos a la pagina de inicio </h1>
+
+            {% if user.is_authenticated %}
+            <p class="text-center">Hola, {{ user.username }}</p>
+            {% else %}
+            <p class="text-center">Hola, anónimo</p>
+            {% endif %}
+        </div>
+</div>
+{% endblock %}
